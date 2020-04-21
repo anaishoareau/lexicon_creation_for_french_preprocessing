@@ -1,15 +1,21 @@
 # Création du lexique pour le package french_preprocessing
 
 Ce repository permet la construction du lexique (fichier lexique.txt) utilisé 
-par l'algorithme de lemmatisation du repository french_preprocessing.
+par l'algorithme de lemmatisation du package french_preprocessing.
 
-#### ATTENTON : Installations nécessaires pour faire fonctionner les codes
+#### ATTENTON : Installations nécessaires
 
 Pour que les codes puissent fonctionner, il faut avoir installé java (JRE) : https://www.java.com/fr/download/ 
-et adapté le path du fichier java.exe dans les codes (au niveau de l'initialisation du StanfordPOSTagger) du type :
+et adapté le path du fichier java.exe dans les codes (au niveau de l'initialisation du StanfordPOSTagger). Exemple :
 
 ```python
-java_path = "C:/Program Files/Java/jre1.8.0_211/bin/java.exe".
+java_path = "C:/Program Files/Java/jre1.8.0_211/bin/java.exe"
+```
+
+Il faut également installer le package FrenchLefffLemmatizer (https://github.com/ClaudeCoulombe/FrenchLefffLemmatizer). Ce qui peut être réalisé avec la commande suivante :
+
+```bach
+pip install git+https://github.com/ClaudeCoulombe/FrenchLefffLemmatizer.git
 ```
 
 ## Contenu du fichier lexique.txt
@@ -20,15 +26,17 @@ de la langue française pouvant être lemmatisés par la méthode FrenchPreproce
 du package french_preprocessing. Pour plus d'informations 
 voir : https://github.com/anaishoareau/french_preprocessing.
 
-A chaque clé-mot est associé un dictionnaire dont les clés sont des tags possibles du ce clé-mot 
+A chaque clé-mot est associé un dictionnaire dont les clés sont les tags possibles de ce clé-mot 
 parmi la liste suivante : ['v', 'nc', 'adj', 'c', 'npp', 'adv', 'det', 'pro', 'prep', 'i', 'ponct', 'cl', 'et'], 
 et les valeurs des tags-clés sont les lemmes associés aux tags-clés. 
 
 Extrait du contenu du fichier lexique.txt : 
+
+```bach
 { [...] 'affouillées': {'adj': 'affouillé', 'v': 'affouiller'}, 'st-michel-de-fronsac': {'npp': 'St-Michel-de-Fronsac'}, 
 'ferrites': {'nc': 'ferrite'} [...] }
-
-## Construction de lexique.txt
+```
+## Construction du fichier lexique.txt
 
 Le fichier lexique.txt est issu de la synthétisation de trois lexiques : 
 Lexique des formes fléchies du français (LEFFF), le Lexique 3.83, et le lexique utilisé par la librarie python spaCy.
@@ -42,7 +50,7 @@ Les tags après uniformisation sont réduits à : 'v' : verbe, 'nc' : nom commun
 'c' : conjonction, 'npp' : nom propre, 'adv' : adverbe, 'det' : déterminant, 'pro' : pronom, 
 'prep' : préposition, 'i' : interjection, 'ponct' : ponctuation, 'cl' : clitique, 'et' : mot en langue étrangère.
 
-Les fichiers du dossier initial_data : lexique_spacy.txt et lexique383.txt sont les données extraites 
+Les fichiers du dossier initial_data : lexique_spacy.txt et lexique383.txt sont les données extraites et simplifiées 
 respectivement du module spaCy (lemmatisation en français) et du fichier Lexique383.xlsb 
 téléchargeable sur le site http://www.lexique.org/.
 
