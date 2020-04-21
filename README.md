@@ -54,13 +54,13 @@ Les fichiers du dossier initial_data : lexique_spacy.txt et lexique383.txt sont 
 respectivement du module spaCy (lemmatisation en français) et du fichier Lexique383.xlsb 
 téléchargeable sur le site http://www.lexique.org/.
 
-## Outils pour la motification du fichier lexique.txt
+## Outils pour la modification du fichier lexique.txt
 
 Les outils pour la modification du lexique afin de l'augmenter facilement, 
 sans compromettre le fichier texte, sont dans le fichier lexique_tools.ipynb, 
 mais également dans le package french_preprocessing dans le fichier lexique_tools.py.
 
-#### Intialisation de la classe LexiqueTools :
+#### Initialisation de la classe LexiqueTools :
 
 ```python 
 lt = LexiqueTools()
@@ -118,7 +118,7 @@ lt.in_lexique('mangé')
 - lt.lexique_update(dictionary)
 
 Prend en argument le dictionnaire des mots à ajouter au lexique, ne renvoie rien.
-Réalise une sucession d'ajouts des mots de "dictionnary" dans le lexique.
+Réalise une succession d'ajouts des mots de "dictionnary" dans le lexique.
 
 ##### Exemple :
 
@@ -187,7 +187,7 @@ on Empirical Methods in Natural Language Processing and Very Large Corpora (EMNL
 of HLT-NAACL 2003, pp. 252-259.
 
 
-### Licenses and Copyrights : 
+### Licences and Copyrights : 
 
 - License Lexique 3.83 : Attribution-ShareAlike 4.0 International, https://github.com/chrplr/openlexicon/blob/master/LICENSE.txt
 - License spaCy : The MIT License (MIT), https://github.com/explosion/spaCy/blob/master/LICENSE
